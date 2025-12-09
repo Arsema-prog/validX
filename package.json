@@ -5,10 +5,11 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "vitest",
-    "build": "tsc"
+    "build": "tsc",
+    "example": "ts-node examples/index.ts"
   },
   "keywords": ["validation", "input", "security", "typescript"],
-  "author": "ValidX Team",
+  "author": "Group 3",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.0.0",
