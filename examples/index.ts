@@ -7,6 +7,8 @@
 import { isEmail, isPhone, isStrongPassword } from "../src/validators/security";
 import { minLength, maxLength, isString } from "../src/validators/string";
 import { isPositive, isInRange, isNumber } from "../src/validators/number";
+import { isObject, isEmptyObject, hasKey, hasKeys } from "../src/validators/object";
+
 
 console.log("=== String Validators ===");
 console.log("isString('hello'): ", isString("hello"));
@@ -22,3 +24,16 @@ console.log("\n=== Number Validators ===");
 console.log("isNumber(10): ", isNumber(10));
 console.log("isPositive(5): ", isPositive(5));
 console.log("inRange(7, 1, 10): ", isInRange(7, 1, 10));
+
+console.log("\n=== Object Validators ===");
+
+const payload = {
+  username: "admin",
+  password: "Aa@12345",
+};
+
+console.log("isObject(payload):", isObject(payload));
+console.log("isEmptyObject(payload):", isEmptyObject(payload));
+console.log("hasKey(payload, 'username'):", hasKey(payload, "username"));
+console.log("hasKeys(payload, ['username', 'password']):", hasKeys(payload, ["username", "password"]));
+
