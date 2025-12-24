@@ -77,13 +77,13 @@
 
 ```bash
 # npm
-npm install validx
+npm install @arsema_tesfaye/validx
 
 # yarn
-yarn add validx
+yarn add @arsema_tesfaye/validx
 
 # pnpm
-pnpm add validx
+pnpm add @arsema_tesfaye/validx
 ```
 
 ---
@@ -92,22 +92,37 @@ pnpm add validx
 
 ```
 validx/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── PULL_REQUEST_TEMPLATE.md   # Template for pull requests to standardize contributions
+│   │   ├── bug_report.md              # Template to submit bugs and issues
+│   │   └── feature_request.md         # Template to propose new features
+│   ├── workflows/
+│   │   └── test.yml                   # CI workflow configuration for automated testing
+├── examples/
+│   └── index.ts                        # Demonstrates how to import and use validators in real scenarios
 ├── src/
 │   ├── validators/
-│   │   ├── string.ts          # String validation functions
-│   │   ├── numbers.ts         # Number validation functions
-│   │   ├── security.ts        # Security validation functions
-│   └── index.ts               # Main export file
+│   │   ├── numbers.ts                  # Functions to validate numeric inputs (positivity, ranges, advanced number rules)
+│   │   ├── object.ts                   # Functions to validate objects and their structure
+│   │   ├── security.ts                 # Security-focused validators (email, phone, strong passwords, sanitization)
+│   │   └── string.ts                   # String validators (type checks, min/max length)
+│   └── index.ts                        # Main export file to bundle all validators for easy import
 ├── tests/
-│   ├── string.test.ts         # String validator tests
-│   ├── number.test.ts         # Number validator tests
-│   └── security.test.ts       # Security validator tests
-├── examples/
-│   └── basic-usage/
-│       └── index.ts           # Usage examples
-├── package.json
-├── tsconfig.json
-└── README.md
+│   ├── number.test.ts                  # Unit tests for numeric validators
+│   ├── object.test.ts                  # Unit tests for object validators
+│   ├── security.test.ts                # Unit tests for security validators
+│   └── string.test.ts                  # Unit tests for string validators
+├── CHANGELOG.md                         # Records all changes and version updates
+├── CODE_OF_CONDUCT.md                   # Guidelines for community behavior
+├── CONTRIBUTING.md                      # Guidelines for contributing to the project
+├── LICENSE.md                            # MIT License text allowing free use and modification
+├── README.md                             # Project overview, installation, and usage
+├── index.js                              # Compiled entry point for npm package usage
+├── logo.jpeg                             # Project logo used in documentation and promotion
+├── package-lock.json                     # Locks exact package versions
+├── package.json                          # Project metadata, dependencies, and scripts
+└── tsconfig.json                         # TypeScript compiler configuration
 ```
 
 ---
@@ -145,7 +160,7 @@ if (isValidUser) {
 ### <img src="https://cdn.simpleicons.org/textpattern/000000" width="18" height="18" align="center"/> String Validators
 
 ```typescript
-import { minLength, maxLength, isString } from "validx";
+import { minLength, maxLength, isString } from '@arsema_tesfaye/validx';
 
 minLength("Hello", 3);   // true
 maxLength("Hello", 10);  // true
@@ -181,7 +196,7 @@ if (isEmail(userEmail) && isStrongPassword(userPass)) {
 ### <img src="https://cdn.simpleicons.org/numbersstation/00A3E0" width="18" height="18" align="center"/> Number Validators
 
 ```typescript
-import { isNumber, isInRange, isPositive } from "validx";
+import { isNumber, isInRange, isPositive } from '@arsema_tesfaye/validx';
 
 isNumber(12);             // true
 isInRange(5, 1, 10);      // true
@@ -253,7 +268,7 @@ ts-node index.ts
 **Example Code** (`examples/basic-usage/index.ts`):
 
 ```typescript
-import { isEmail, minLength, isStrongPassword } from "validx";
+import { isEmail, minLength, isStrongPassword } from '@arsema_tesfaye/validx';
 
 // Email validation
 console.log("Email validation:");
