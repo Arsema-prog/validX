@@ -462,7 +462,7 @@ Please ensure you follow our [Code of Conduct](CODE_OF_CONDUCT.md)
 ```bash
 # 1. Fork the repository
 # 2. Clone your fork
-git clone https://github.com/YOUR_USERNAME/validX.git
+git clone https://github.com/Arsema-prog/validX.git
 
 # 3. Create a feature branch
 git checkout -b feature/new-validator
